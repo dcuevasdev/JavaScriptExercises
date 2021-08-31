@@ -4,7 +4,7 @@ const notes = [
   { value: 2, qualification: "muy deficiente" },
   { value: 3, qualification: "insuficiente" },
   { value: 4, qualification: "insuficiente" },
-  { value: 5, qualification: "suficiente" },
+  { value: 5, qualification: "insuficiente" },
   { value: 6, qualification: "bien" },
   { value: 7, qualification: "notable" },
   { value: 8, qualification: "notable" },
@@ -19,5 +19,5 @@ let findNote = notes.find((note) => {
 });
 
 document.write(
-  `Su nota es ${findNote.value} y su calificación es ${findNote.qualification}`
+  `Tú nota es ${findNote.value} y su calificación es ${findNote.qualification}`
 );
