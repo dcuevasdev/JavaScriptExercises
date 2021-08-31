@@ -12,12 +12,16 @@ const notes = [
   { value: 10, qualification: "sobresaliente" },
 ];
 
-let random = Math.floor(Math.random() * notes.length);
+let user = Number(prompt("Ingresa el valor de la nota"));
 
 let findNote = notes.find((note) => {
-  return note.value === random;
+  return note.value === user;
 });
 
-document.write(
-  `Tú nota es ${findNote.value} y su calificación es ${findNote.qualification}`
-);
+if (findNote === undefined) {
+  document.write("Ingresa una nota valida");
+} else {
+  document.write(
+    `Tú nota es ${findNote.value} y tú calificación es ${findNote.qualification}`
+  );
+}
