@@ -5,10 +5,6 @@ const findString = values.filter((value) => {
   return typeof value == "string";
 });
 
-const findNumber = values.filter((value) => {
-  return typeof value == "number";
-});
-
 function stringGreatest() {
   const order = findString.sort((a, b) => {
     return a.length - b.length;
@@ -24,7 +20,6 @@ function stringGreatest() {
 stringGreatest();
 
 //Booleanos
-
 const findBoolean = values.filter((value) => {
   return typeof value == "boolean";
 });
@@ -39,3 +34,34 @@ function booleans() {
   }
 }
 booleans();
+
+// Operaciones matemáticas
+const findNumber = values.filter((value) => {
+  return typeof value == "number";
+});
+
+document.write(
+  `${findNumber[0]} + ${findNumber[1]}  = <strong>${
+    findNumber[0] + findNumber[1]
+  }</strong> <br />`
+);
+document.write(
+  `${findNumber[0]} - ${findNumber[1]}  = <strong>${
+    findNumber[0] - findNumber[1]
+  }</strong> <br />`
+);
+document.write(
+  `${findNumber[0]} * ${findNumber[1]}  = <strong>${
+    findNumber[0] * findNumber[1]
+  }</strong> <br />`
+);
+document.write(
+  `${findNumber[0]} / ${findNumber[1]}  = <strong>${
+    findNumber[0] / findNumber[1]
+  }</strong> <br />`
+);
+document.write(
+  `${findNumber[0]} % ${findNumber[1]}  = <strong>${
+    findNumber[0] % findNumber[1]
+  }</strong> <br />`
+);
