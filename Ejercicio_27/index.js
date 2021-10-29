@@ -2,7 +2,7 @@
   Vamos a recibir un array, y debemos invert
 */
 
-const arr = [1, 2, 3, 4, 89];
+const arr = [4, 2, 1, -10000, -7];
 
 function reverseArray(arr) {
   const newArray = [];
