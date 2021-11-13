@@ -28,4 +28,4 @@ function orderSentence(sentence) {
   console.log(orderedArray.join(" "));
 }
 
-orderSentence(" co8dicion 2lo  dentro5 Tod1o d6e e4ste   de9be qu3e la7");
+orderSentence("co8dicion 2lo dentro5 Tod1o d6e e4ste de9be qu3e la7");
