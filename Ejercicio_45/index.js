@@ -1,4 +1,4 @@
-let requestAmount = 230;
+let requestAmount = 1350;
 
 const money = {
   100: 3,
@@ -21,4 +21,21 @@ const availableMoney = () => {
 if (requestAmount > availableMoney()) {
   console.log("No contamos con el monto solicitado");
 } else {
+  let count = 0;
+  while (requestAmount !== 0) {
+    count++;
+    const actualDenomination = denomination[denomination.length - count];
+    const div = parseInt(requestAmount / actualDenomination);
+    const amountDenomination = money[actualDenomination];
+
+    if (div <= amountDenomination && div !== 0) {
+      requestAmount = requestAmount - div * actualDenomination;
+      console.log(`Recibes ${div} billetes de ${actualDenomination}`);
+    } else if (div >= amountDenomination) {
+      requestAmount = requestAmount - amountDenomination * actualDenomination;
+      console.log(
+        `Recibes ${amountDenomination} billetes de ${actualDenomination}`
+      );
+    }
+  }
 }
