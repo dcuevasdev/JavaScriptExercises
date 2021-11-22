@@ -1,3 +1,5 @@
+let requestAmount = 230;
+
 const money = {
   100: 3,
   50: 6,
@@ -15,3 +17,8 @@ const availableMoney = () => {
 
   return totalMoney;
 };
+
+if (requestAmount > availableMoney()) {
+  console.log("No contamos con el monto solicitado");
+} else {
+}
