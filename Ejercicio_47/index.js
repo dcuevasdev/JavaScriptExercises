@@ -22,3 +22,17 @@ function cutText(inputText, numbertocut) {
   console.log(newText);
 }
 cutText("Hola Mundo", 4);
+
+/*
+3) Programa una función que dada una String te devuelva un Array de textos separados por
+cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+*/
+
+function textToArray(text, character) {
+  const size = text.length;
+  const transform = text.split(character, size);
+
+  console.log(transform);
+}
+
+textToArray("Hola que tal", " ");
