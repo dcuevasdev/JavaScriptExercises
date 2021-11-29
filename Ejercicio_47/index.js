@@ -36,3 +36,16 @@ function textToArray(text, character) {
 }
 
 textToArray("Hola que tal", " ");
+
+/*
+4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3)
+devolverá Hola Mundo Hola Mundo Hola Mundo.
+*/
+
+function repeatString(string, repetitions) {
+  for (let i = 0; i < repetitions; i++) {
+    console.log(string);
+  }
+}
+
+repeatString("Hola Mundo", 3);
