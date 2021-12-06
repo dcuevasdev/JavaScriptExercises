@@ -50,3 +50,35 @@ const repeatWord = (string = undefined, repeat) => {
 };
 
 repeatWord("hola mundo adios mundo", "mundo");
+
+/*
+3) Programa una función que valide si una palabra o frase dada, es un palíndromo
+(que se lee igual en un sentido que en otro), pe. mifuncion("Salas")
+devolverá true.
+*/
+const investWord = (string) => {
+  let newWord = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    const letter = string.charAt(i);
+    newWord = newWord + letter;
+  }
+  return newWord;
+};
+
+const palindromeWord = (word = undefined) => {
+  if (word === undefined) return console.warn("No ingresaste ningún dato");
+
+  const validatorNumber = typeof word;
+  if (validatorNumber === "number")
+    return console.log("Ingresa un valor válido que sea tipo string");
+
+  const lowerWord = word.toLowerCase().replace(/ /g, "");
+  const lowerInvertWord = investWord(word).toLowerCase().replace(/ /g, "");
+
+  lowerWord === lowerInvertWord ? console.log(true) : console.log(false);
+};
+
+palindromeWord("Dabale arroz a la zorra el abad");
+palindromeWord("Hola Daniel");
+palindromeWord("SaLas");
