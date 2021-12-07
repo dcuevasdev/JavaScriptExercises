@@ -82,3 +82,24 @@ const palindromeWord = (word = undefined) => {
 palindromeWord("Dabale arroz a la zorra el abad");
 palindromeWord("Hola Daniel");
 palindromeWord("SaLas");
+
+/*
+4) Programa una función que elimine cierto patrón de caracteres de un texto dado,
+pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
+devolverá  "1, 2, 3, 4 y 5.
+*/
+
+const removePattern = (text = undefined, pattern = undefined) => {
+  if (text === undefined || pattern === undefined)
+    return console.warn("Ingresa un valor para el texto y el patron repetido");
+
+  if (typeof text === "number" || typeof pattern === "number")
+    return console.log("Ingresa un valores válidos que sean tipo string");
+
+  const re = new RegExp(pattern, "g");
+  const remove = text.replace(re, "");
+
+  return console.log(remove);
+};
+
+removePattern("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
