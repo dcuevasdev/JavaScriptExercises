@@ -2,7 +2,7 @@
 1) Programa una función que invierta las palabras de una cadena de texto, pe.
 miFuncion("Hola Mundo") devolverá "odnuM aloH".
 */
-const investWord = (string = undefined) => {
+const invertWord = (string = undefined) => {
   if (string === undefined) return console.warn("No ingresaste ningún dato");
 
   const validatorNumber = typeof string;
@@ -18,7 +18,7 @@ const investWord = (string = undefined) => {
   return console.log(newWord);
 };
 
-investWord("Hola Mundo");
+invertWord("Hola Mundo");
 
 /*
 2) Programa una función para contar el número de veces que se repite una
@@ -56,7 +56,7 @@ repeatWord("hola mundo adios mundo", "mundo");
 (que se lee igual en un sentido que en otro), pe. mifuncion("Salas")
 devolverá true.
 */
-const investWord = (string) => {
+const invertWord = (string) => {
   let newWord = "";
 
   for (let i = string.length - 1; i >= 0; i--) {
@@ -74,7 +74,7 @@ const palindromeWord = (word = undefined) => {
     return console.log("Ingresa un valor válido que sea tipo string");
 
   const lowerWord = word.toLowerCase().replace(/ /g, "");
-  const lowerInvertWord = investWord(word).toLowerCase().replace(/ /g, "");
+  const lowerInvertWord = invertWord(word).toLowerCase().replace(/ /g, "");
 
   lowerWord === lowerInvertWord ? console.log(true) : console.log(false);
 };
@@ -96,7 +96,7 @@ const removePattern = (text = undefined, pattern = undefined) => {
   if (typeof text === "number" || typeof pattern === "number")
     return console.log("Ingresa un valores válidos que sean tipo string");
 
-  const re = new RegExp(pattern, "g");
+  const re = new RegExp(pattern, "ig");
   const remove = text.replace(re, "");
 
   return console.log(remove);
