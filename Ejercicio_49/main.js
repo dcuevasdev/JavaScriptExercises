@@ -25,3 +25,19 @@ const capicua = (num = undefined) => {
 };
 
 capicua(9889);
+
+/*
+3) Programa una función que calcule el factorial de un número (El factorial de un
+entero positivo n, se define como el producto de todos los números enteros
+positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+*/
+const factorial = (num) => {
+  let mult = num;
+
+  for (let i = num - 1; i > 0; i--) {
+    mult = mult * i;
+  }
+  return console.log(`El factorial del número ${num} es ${mult}`);
+};
+
+factorial(5);
