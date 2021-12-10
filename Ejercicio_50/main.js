@@ -31,7 +31,7 @@ primeNumber("562");
 primeNumber(11);
 
 /*
-Programa una función que determine si un número es par o impar,
+2) Programa una función que determine si un número es par o impar,
 pe. miFuncion(29) devolverá Impar.
 */
 
@@ -51,3 +51,47 @@ isPair(11);
 isPair(600);
 isPair(159669);
 isPair("Fskfhsldkf");
+
+/*
+3) Programa una función para convertir grados Celsius a Fahrenheit
+y viceversa, pe. miFuncion(0,"C") devolverá 32°F
+*/
+const convert = (transform = undefined, type = undefined) => {
+  if (transform === undefined && type === undefined)
+    return console.log(
+      "Ingrese el valor a convertir y seleccione que conversión desea realizar"
+    );
+
+  if (transform === undefined)
+    return console.log("Ingrese el valor a convertir");
+
+  if (type === undefined)
+    return console.log("Seleccione que conversión desea realizar");
+
+  if (typeof transform === "string" || typeof type === "string")
+    return console.log("Ingresa un tipo de dato valido");
+
+  switch (type) {
+    case 1:
+      const celsiusToFahrenheit = transform * 1.8 + 32;
+      console.log(`${transform}ºC equivalen a ${celsiusToFahrenheit}ºF`);
+      break;
+    case 2:
+      const fahrenheitToCelsius = (transform - 32) * (5 / 9);
+      console.log(`${transform}ºF equivalen a ${fahrenheitToCelsius}ºC`);
+      break;
+    default:
+      console.log("Ingrese la conversion que sea realizar de forma correcta");
+      break;
+  }
+};
+
+convert();
+convert(5);
+convert(32, "Hola");
+convert("hola", 32);
+convert(32, 2);
+convert(0, 1);
+convert(50, 3);
+convert(50, 1);
+convert(10, 2);
