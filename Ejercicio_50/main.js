@@ -93,5 +93,5 @@ convert("hola", 32);
 convert(32, 2);
 convert(0, 1);
 convert(50, 3);
-convert(50, 1);
-convert(10, 2);
+convert(10, 1);
+convert(50, 2);
