@@ -23,3 +23,26 @@ discount(2000, 0);
 discount(89, "Hola");
 discount();
 discount(1000);
+
+/*
+2) Programa una función que dada una fecha válida determine cuantos años han
+pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23))devolverá 36 años
+(en 2020).
+*/
+
+const calcAge = (date) => {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const yearBornDate = date.getFullYear();
+
+  if (date.getMonth() < currentDate.getMonth()) {
+    const age = currentYear - yearBornDate;
+
+    console.log(`Usted tiene ${age} años`);
+  } else {
+    const age = currentYear - yearBornDate - 1;
+    console.log(`Usted tiene ${age} años`);
+  }
+};
+
+calcAge(new Date(1997, 11, 24));
