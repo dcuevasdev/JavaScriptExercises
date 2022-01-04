@@ -46,3 +46,41 @@ const calcAge = (date) => {
 };
 
 calcAge(new Date(1997, 11, 24));
+
+/*
+3) Programa una función para convertir números de base binaria a decimal y
+viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+*/
+
+const decimalToBinary = (decimal) => {
+  let num = decimal;
+  let binary = "";
+
+  while (num != 0) {
+    const operation = num / 2;
+    num = Math.trunc(operation);
+    const validator = operation - num;
+
+    if (validator === 0) {
+      binary += 0;
+    } else {
+      binary += 1;
+    }
+  }
+  const binaryReverse = binary.split("").reverse().join("");
+  console.log(binaryReverse);
+};
+
+decimalToBinary(2);
+
+const binaryToDecimal = (binary) => {
+  const binaryArray = String(binary).split("");
+  let numFor = 0;
+
+  for (let i = 0; i < binaryArray.length; i++) {
+    numFor = numFor * 2 + Number(binaryArray[i]);
+  }
+  console.log(numFor);
+};
+
+binaryToDecimal(11111100101);
