@@ -4,8 +4,7 @@ vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4,
 Consonantes: 5.
 */
 const counterOfWords = (text) => {
-  const lowerText = text.toLowerCase().replace(/ /g, "");
-  const textArray = lowerText.split("");
+  const textArray = text.toLowerCase().replace(/ /g, "").split("");
   let counterVocals = 0;
   let counterConsonants = 0;
 
@@ -36,3 +35,23 @@ const counterOfWords = (text) => {
 };
 
 counterOfWords("Hola Mundo");
+
+/*
+2) Programa una función que valide que un texto sea un nombre válido,
+pe. miFuncion("Jonathan MirCha") devolverá verdadero
+*/
+const validName = (name) => {
+  const deleteSpace = name.replace(/ /g, "").split("").join("");
+  const expRegOne = /\d/g;
+  const expRegTwo = /\W/g;
+
+  if (expRegOne.test(deleteSpace) || expRegTwo.test(deleteSpace)) {
+    console.log(
+      "El nombre que ingresaste no es valido, contiene caracteres no válidos"
+    );
+  } else {
+    console.log(`El nombre "${name}" es váido`);
+  }
+};
+
+validName("Daniel Cuevas");
