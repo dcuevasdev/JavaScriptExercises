@@ -55,3 +55,20 @@ const validName = (name) => {
 };
 
 validName("Daniel Cuevas");
+
+/*
+3)Programa una función que valide que un texto sea un email válido,
+pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+*/
+const validEmail = (email) => {
+  const expReg =
+    /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i;
+
+  if (expReg.test(email)) {
+    console.log(`El E-mail "${email}" es váido`);
+  } else {
+    console.log("El E-mail que ingresaste no es válido");
+  }
+};
+
+validEmail("Daniel@gmail.com");
