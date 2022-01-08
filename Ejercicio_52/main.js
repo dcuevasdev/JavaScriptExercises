@@ -4,7 +4,7 @@ vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4,
 Consonantes: 5.
 */
 const counterOfWords = (text) => {
-  const textArray = text.toLowerCase().replace(/ /g, "").split("");
+  const textArray = text.toLowerCase().replace(/ /g, "");
   let counterVocals = 0;
   let counterConsonants = 0;
 
