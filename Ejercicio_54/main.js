@@ -71,6 +71,23 @@ deleteDuplicate([1, 4, 5, 99, -60, {}]);
 deleteDuplicate([]);
 deleteDuplicate(["x", 10, "x", 2, "10", 10, true, true]);
 
+const deleteDuplicateTwo = (arr) => {
+  if (arr === undefined) return console.log("Debes ingresar un Array");
+
+  if (Object.prototype.toString.call(arr) === "[object Object]")
+    return console.log(`El valor que ingresaste no es válido`);
+
+  if (typeof arr === "string" || typeof arr === "number")
+    return console.log(`El valor "${arr}" no es un Array`);
+
+  const withoutDuplicate = arr.filter((value, index, self) => {
+    return self.indexOf(value) === index;
+  });
+
+  console.log(withoutDuplicate);
+};
+
+deleteDuplicateTwo(["x", 10, "x", 2, "10", 10, true, true]);
 /*
 Programa una función que dado un arreglo de números obtenga el promedio,
 pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
