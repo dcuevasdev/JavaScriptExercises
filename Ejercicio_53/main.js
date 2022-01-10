@@ -58,6 +58,28 @@ maxMin({ one: 1, two: 2 });
 maxMin([1, 4, 5, 99, -60]);
 maxMin([]);
 
+const otherMinMax = (num = undefined) => {
+  if (num === undefined) return console.log("Debes ingresar un Array");
+
+  if (Object.prototype.toString.call(num) === "[object Object]")
+    return console.log(`El valor que ingresaste no es válido`);
+
+  if (typeof num === "string" || typeof num === "number")
+    return console.log(`El valor "${num}" no es un Array`);
+
+  if (num.length === 0) return console.log("Ingresa datos al Array");
+
+  const maxMin = [Math.min(...num), Math.max(...num)];
+  console.log(maxMin);
+};
+
+otherMinMax();
+otherMinMax(1);
+otherMinMax("Hola");
+otherMinMax({ one: 1, two: 2 });
+otherMinMax([1, 4, 5, 99, -60]);
+otherMinMax([]);
+
 /*
 3)Programa una función que dado un array de números devuelva un objeto con 2
 arreglos en el primero almacena los números pares y en el segundo los
