@@ -71,6 +71,7 @@ deleteDuplicate([1, 4, 5, 99, -60, {}]);
 deleteDuplicate([]);
 deleteDuplicate(["x", 10, "x", 2, "10", 10, true, true]);
 
+/* Segunda solucion para el 54.2 */
 const deleteDuplicateTwo = (arr) => {
   if (arr === undefined) return console.log("Debes ingresar un Array");
 
@@ -88,8 +89,9 @@ const deleteDuplicateTwo = (arr) => {
 };
 
 deleteDuplicateTwo(["x", 10, "x", 2, "10", 10, true, true]);
+
 /*
-Programa una función que dado un arreglo de números obtenga el promedio,
+3)Programa una función que dado un arreglo de números obtenga el promedio,
 pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
 */
 const average = (arr) => {
@@ -126,3 +128,35 @@ average([1, 4, 5, 99, -60, {}]);
 average([]);
 average(["x", 10, "x", 2, "10", 10, true, true]);
 average([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
+
+/* Segunda solución para el 54.3 */
+const averageTwo = (arr) => {
+  if (arr === undefined) return console.log("Debes ingresar un Array");
+
+  if (Object.prototype.toString.call(arr) === "[object Object]")
+    return console.log(`El valor que ingresaste no es válido`);
+
+  if (arr.length === 0) return console.log("Ingresa datos al Array");
+
+  if (typeof arr === "string" || typeof arr === "number")
+    return console.log(`El valor "${arr}" no es un Array`);
+
+  for (const num of arr) {
+    if (typeof num !== "number")
+      return console.log(`El Array continene datos que nos son númericos`);
+  }
+
+  const averageNumber = arr.reduce((previous, current) => previous + current);
+
+  const result = averageNumber / arr.length;
+  console.log(`El promedio de ${arr.join(" + ")} es: ${result}`);
+};
+
+averageTwo();
+averageTwo(1);
+averageTwo("Hola");
+averageTwo({ one: 1, two: 2 });
+averageTwo([1, 4, 5, 99, -60, {}]);
+averageTwo([]);
+averageTwo(["x", 10, "x", 2, "10", 10, true, true]);
+averageTwo([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
